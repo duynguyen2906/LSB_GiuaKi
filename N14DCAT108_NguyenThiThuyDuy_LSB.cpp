@@ -27,6 +27,7 @@ string binToText(string bin){
         kq += c;
     }
     return kq;
+
 }
 
 int main(){
@@ -58,14 +59,16 @@ int main(){
 		char * arr;
 		int size;
   		std::ifstream file (namepic.c_str(),std::ifstream::binary);
-  		if (file.is_open()){
+  		if (file.is_open())
+  		{
     		file.seekg (0,file.end);
-		size = file.tellg();
-		file.seekg (0);
+			size = file.tellg();
+			file.seekg (0);
     		arr = new char [size];
     		file.read (arr, size);
     		//cout << size;
     		if ((size-54)>=len_mess){
+    			
     			cout <<"Co the giau tin!" << endl;
     			int tmp = 54;
     			for (int i = 0; i <len_mess; i++){
@@ -84,9 +87,10 @@ int main(){
 				delete[] arr;
 				file.close();
 				outfile.close();
-				cout << "Giau tin thanh cong!" << endl;
+				cout << "Giau tin thanh cong!" << endl;;
     		}
     		else cout << "Khong the giau tin!" << endl;
+
   		}
   		else {
   			cout << "Khong the mo file" << endl;;
@@ -100,13 +104,15 @@ int main(){
 		string kq="";
 		cout << "Nhap vao ten anh -- vi du: ENC_DUY.bmp : ";
 		cin >> namepic;
+		
 		char * arr;
 		int size;
   		std::ifstream file (namepic.c_str(),std::ifstream::binary);
-  		if (file.is_open()){
+  		if (file.is_open())
+  		{
     		file.seekg (0,file.end);
-		size = file.tellg();
-		file.seekg (0);
+			size = file.tellg();
+			file.seekg (0);
     		arr = new char [size];
     		file.read (arr, size);
     		int tmp = 54;
